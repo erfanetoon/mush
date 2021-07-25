@@ -44,6 +44,7 @@ const Movies = () => {
   // listGropu
   const GenresSelectHandler = (genre) => {
     setselectedGenra(genre);
+    setMovies(getMovies().filter(item => item.genre.name === genre.name))
   };
 
   //  گرفتن کل دیتاهای فیلم و نوع فیلم..
@@ -93,6 +94,8 @@ const Movies = () => {
         <div className="Mtable">
           <table className="table">
             <Header />
+            {console.log(currentMovies)}
+            {console.log(selectedGenra)}
             {currentMovies.map((movie) => {
               return (
                 <Movie
